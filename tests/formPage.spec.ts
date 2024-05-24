@@ -1,3 +1,4 @@
+import { WindowComponent } from './../src/app/pages/modal-overlays/window/window.component';
 import { test as it } from "@playwright/test";
 /*
 it.beforeAll(() => {
@@ -31,7 +32,7 @@ it.describe("FORM PAGE TYPE", () => {
     //   const browser: Browser = await chromium.launch({ headless: false });
     // const context = await browser.newContext();
     // const page: Page = await context.newPage();
-
+   
     await page.goto(
       "https://www.lambdatest.com/selenium-playground/input-form-demo",
     );
