@@ -1,8 +1,8 @@
-import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv';
+import { defineConfig, devices } from "@playwright/test";
+import dotenv from "dotenv";
 dotenv.config({
-  path: `./env/.env.${process.env.ENV}` //TBD
-})
+  path: `./env/.env.${process.env.ENV}`, //TBD
+});
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -13,7 +13,7 @@ dotenv.config({
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: "./tests",
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -23,34 +23,34 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 2,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-     //baseURL: process.env.BASEURL || 'http://127.0.0.1:3000',
+    //baseURL: process.env.BASEURL || 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    video: 'on-first-retry'
+    trace: "on-first-retry",
+    video: "on-first-retry",
   },
-  testMatch: 'test.list.ts',
+  // testMatch: 'test.list.ts',
 
-  expect:{
-    timeout: 5000
+  expect: {
+    timeout: 5000,
   },
-  expect:{
-    timeout: 5000
-  },
-  testMatch: 'test.list.ts',
 
   /* Configure projects for major browsers */
   projects: [
-    { name: 'setup', testMatch: /.*\.setup\.ts/ },
+    { name: "setup", testMatch: /.*\.setup\.ts/ },
     {
-      name: 'chromium',
-   
-      use: { ...devices['Desktop Chrome'] , headless: false, storageState: './.auth/user.json'},
-      dependencies: ['setup']
+      name: "chromium",
+
+      use: {
+        ...devices["Desktop Chrome"],
+        headless: false,
+        //storageState: "./.auth/user.json",
+      },
+      // dependencies: ["setup"],
     },
 
     // {
