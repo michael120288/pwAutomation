@@ -5,7 +5,7 @@ test.describe('ASSERSION',()=>{
 
 
 test('assersions soft', async ({page,browserName}) => {
-  test.use({ viewport: { width: 500, height: 500 } });
+  //test.use({ viewport: { width: 500, height: 500 } });
   // test.slow();
   await page.goto('https://www.lambdatest.com/')
   const title = await page.title()
