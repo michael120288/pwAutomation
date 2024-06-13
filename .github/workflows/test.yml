@@ -22,7 +22,7 @@ jobs:
           npm install -D allure-commandline --force
           npx allure generate ./allure-results --clean
       - name: Run Playwright tests
-        run: npm run dropDown
+        run: npm run lambdaTest
       - uses: actions/upload-artifact@v3
         if: always()
         with:
