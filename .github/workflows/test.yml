@@ -21,8 +21,10 @@ jobs:
         run: |
           npm install -D allure-commandline --force
           npx allure generate ./allure-results --clean
+      - name: Start Project
+        run: npm run start
       - name: Run Playwright tests
-        run: npm run lambdaTest
+        run: npm playwright test
       - uses: actions/upload-artifact@v3
         if: always()
         with:
