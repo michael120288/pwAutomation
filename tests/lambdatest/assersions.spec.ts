@@ -12,7 +12,7 @@ test('assersions soft', async ({page,browserName}) => {
   expect.soft(title).toContain('LambdaTest')
   const header = page.locator('h1')
   expect(await header.textContent()).toContain('Next-Generation Mobile Apps and Cross Browser ')
-  await expect(page.locator(' img[src$=\'Vimeo.svg\']')).toHaveAttribute('alt','vimeos',{timeout:7000})
+  await expect(page.locator(' img[src$=\'Vimeo.svg\']')).toHaveAttribute('alt','vimeo',{timeout:7000})
   const path = await page.video().path();
   console.log(path);
 })
