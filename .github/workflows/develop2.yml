@@ -39,7 +39,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci --force
       - name: Start project
-        run: npm run start
+        run: timeout 2m npm run start
+
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: Run tests
