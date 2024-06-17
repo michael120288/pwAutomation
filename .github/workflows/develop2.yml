@@ -56,6 +56,7 @@ jobs:
 
 
       - name: Run tests
+          - 4200:4200
         run: npm run projectTest
   build:
     needs: start-project
@@ -65,6 +66,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci --force
+      - name: Install Playwright
+        run: npx playwright install --with-deps
       - name: Build website
         run: npm run lambdaTest
 
