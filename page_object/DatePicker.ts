@@ -60,6 +60,7 @@ export class DatePicker {
       Nov:"11",
       Dec:"12"
   }
+   const formattedDay = parseInt(this.date, 10).toString()
     await this.page.locator(this.fromInput).click()
     console.log(this.randomYearNumber);
     for(let i = 0; i < this.randomYearNumber; i++){
