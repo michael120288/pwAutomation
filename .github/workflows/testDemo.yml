@@ -27,8 +27,8 @@ on:
       - '**.yaml'
       - '**.json'
       - '**.sh'
-  schedule:
-    - cron: '0 0 * * *'
+  # schedule:
+  #   - cron: '0 0 * * *'
 
 jobs:
   start_project:
